@@ -21,7 +21,7 @@ let element = document.querySelector("#about") // в element Должен быт
 element.scrollIntoView()
 ```
 
-🤖У scrollIntoView может быть аргумент типа boolean:
+🤖 У scrollIntoView может быть аргумент типа boolean:
 
 - Если указать true, то скролл будет перемещен чтобы верхняя граница элемента совпала с верхней границе окна.
 - Если указать false, то скролл остановится так, чтобы нижняя граница элемента была вровень с нижней границей окна.
@@ -34,7 +34,7 @@ element.scrollIntoView()
 
 {% include "authors/vindi-r/in-work.njk" %}
 
-🛠Ниже вариант использования прокрутки к элементу с различными опциями
+🛠 Ниже вариант использования прокрутки к элементу с различными опциями
 
 <p class="codepen" data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="vindi-r" data-slug-hash="OGqgxa" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="scrollIntoView - в работе">
   <span>See the Pen <a href="https://codepen.io/vindi-r/pen/OGqgxa">

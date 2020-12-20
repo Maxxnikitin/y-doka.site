@@ -45,7 +45,7 @@ elem.addEventListener("click", function (e) {
 })
 ```
 
-🤖Заранее созданные функции обычно используют, когда функция содержит в себе много кода или к ней нужно ссылаться несколько раз.
+🤖 Заранее созданные функции обычно используют, когда функция содержит в себе много кода или к ней нужно ссылаться несколько раз.
 
 Анонимные функции удобно использовать при быстрой разработке или когда обработчик создается в одном единственном месте и выносить его в отдельную именованную функцию — дольше чем писать код самой этой функции.
 
@@ -60,7 +60,7 @@ elem.addEventListener("click", function (e) {
 
 {% include "authors/vindi-r/in-work.njk" %}
 
-🛠Базовая обработка событий клавиатуры:
+🛠 Базовая обработка событий клавиатуры:
 
 <p class="codepen" data-height="265" data-theme-id="light" data-default-tab="js,result" data-user="vindi-r" data-slug-hash="yrreWz" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="addEventListener - в работе">
   <span>See the Pen <a href="https://codepen.io/vindi-r/pen/yrreWz">
@@ -68,7 +68,7 @@ elem.addEventListener("click", function (e) {
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 
-🛠Обработка событий мыши:
+🛠 Обработка событий мыши:
 
 <p class="codepen" data-height="265" data-theme-id="light" data-default-tab="js,result" data-user="vindi-r" data-slug-hash="mggrdz" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="addEventListener - в работе">
   <span>See the Pen <a href="https://codepen.io/vindi-r/pen/mggrdz">
