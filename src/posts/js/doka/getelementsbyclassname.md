@@ -1,5 +1,5 @@
 ---
-title: "getElementsByClassName()"
+title: "getElements&shy;ByClassName()"
 name: getelementsbyclassname
 author: N_Lopin
 co-authors:

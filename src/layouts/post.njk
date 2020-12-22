@@ -3,7 +3,7 @@ layout: base
 ---
 <article class="article">
   <div class="article__title">
-    <h1>{{ title }}</h1>
+    <h1>{{ title | safe }}</h1>
     <a href="https://github.com/Y-Doka/y-doka.site/blob/master/{{ page.inputPath }}" class="article__title-edit" target="_blank" title="Редактировать на Github.com">&#9998;</a>
     <span class="article__section">{{ section }}</span>
   </div>
