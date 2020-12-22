@@ -1,5 +1,5 @@
 ---
-title: "Promise. Метод catch"
+title: "Promise.catch()"
 name: promise-catch
 author: N_Lopin
 co-authors:

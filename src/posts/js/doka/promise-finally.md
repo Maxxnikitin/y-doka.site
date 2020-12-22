@@ -1,5 +1,5 @@
 ---
-title: "Promise. Метод finally"
+title: "Promise.finally()"
 name: promise-finally
 author: N_Lopin
 co-authors:
