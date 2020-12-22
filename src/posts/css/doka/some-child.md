@@ -7,6 +7,11 @@ designers:
 contributors:
 summary:
   - псевдокласс
+  - first-child
+  - nth-child
+  - last-child
+  - nth-last-child
+  - only-child
 ---
 
 ## Кратко

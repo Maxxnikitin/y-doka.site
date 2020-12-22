@@ -7,6 +7,11 @@ designers:
 contributors:
 summary:
   - псевдокласс
+  - first-of-type
+  - nth-of-type
+  - last-of-type
+  - nth-last-of-type
+  - only-of-type
 ---
 
 ## Кратко
