@@ -1,6 +1,6 @@
 ---
-title: ":first-child / :nth-child / :last-child / :nth-last-child / :only-child"
-name: child
+title: ":*-child"
+name: some-child
 author: ABatickaya
 co-authors:
 designers:

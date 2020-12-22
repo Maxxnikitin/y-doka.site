@@ -1,6 +1,6 @@
 ---
-title: ":first-of-type / :nth-of-type / :last-of-type / :nth-last-of-type / :only-of-type"
-name: nth-of-type
+title: ":*-of-type"
+name: some-of-type
 author: Roman_Ganin
 co-authors:
 designers:
