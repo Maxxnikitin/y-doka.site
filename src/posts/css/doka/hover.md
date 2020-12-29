@@ -4,7 +4,7 @@ name: hover
 author: ABatickaya
 co-authors:
 designers:
-contributors:
+contributors: skorobaeus
 summary:
   - :hover
   - LVHA
@@ -78,22 +78,18 @@ li .link:hover {
 
 ```css
 .link {
-  color: #000;
-  transition: color 0.5s; /* Скорость изменения цвета с розового на чёрный */
+  color: #ffffff;
+  text-decoration-color: #ffd829;
+  transition: color 0.5s; /* Скорость изменения цвета с белого на оранжевый */
 }
 
 .link:hover {
-  color: pink;
-  transition: color 0.1s; /* Скорость изменения цвета с чёрного на розовый */
+  color: #ed6742;
+  transition: color 0.1s; /* Скорость изменения цвета обратно с оранжевого на белый */
 }
 ```
 
-<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="result" data-user="solarrust" data-slug-hash="qBbgdYo" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title=":hover + transition">
-  <span>See the Pen <a href="https://codepen.io/solarrust/pen/qBbgdYo">
-  :hover + transition</a> by Alena (<a href="https://codepen.io/solarrust">@solarrust</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+{% demo "/hover/", "Ховер-эффект на ссылке", 120 %}
 
 Ссылка быстро (за 0.2 секунды) меняет цвет с чёрного на розовый при наведении курсора и чуть медленнее (за 0.5 секунды) меняет цвет обратно с розового на чёрный когда курсор уводится за пределы ссылки.
 

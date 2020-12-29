@@ -5,7 +5,7 @@ author: ABatickaya
 co-authors:
   - furtivite
 designers:
-contributors:
+contributors: skorobaeus
 tags:
   - sprint-4
 summary:
@@ -192,12 +192,7 @@ summary:
 
 Вот вам демка чтобы было понятнее. Обратите внимание, что вне зависимости от размера шрифта все блоки выравниваются по нижней линии первой строки.
 
-<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="solarrust" data-slug-hash="PoNOyJm" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="PoNOyJm">
-  <span>See the Pen <a href="https://codepen.io/solarrust/pen/PoNOyJm">
-  PoNOyJm</a> by Alena (<a href="https://codepen.io/solarrust">@solarrust</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+{% demo "/flexbox/", "Ссылка на изображении", 750 %}
 
 ### `align-content`
 

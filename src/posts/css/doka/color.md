@@ -5,7 +5,7 @@ author: grachev
 co-authors:
   - vladimir
 designers:
-contributors:
+contributors: skorobaeus
 summary:
   - color
 ---
@@ -85,20 +85,34 @@ color: unset;
 
 💡 Используй ключевое слово `currentColor`, чтобы элемент унаследовал цвет текста `color` у родительского элемента, например:
 
+HTML
+
 ```html
-<div style="color:blue; border: 1px dashed currentColor;">
-  Мы сделали этот текст синим с помощью свойства "color"
-  <div style="background:currentColor; height:9px;"></div>
-  Этот блок наследует цвет у текста, для которого задано свойство "color".
+<div class="parent">
+  Мы сделали этот текст зелёным с помощью свойства «color». Рамки блока
+  наследуют цвет от текста.
+  <div class="child"></div>
+  Блок выше 👆 тоже наследует фоновый цвет от текста, для которого задано
+  свойство «color».
 </div>
 ```
 
-<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="max-grachev" data-slug-hash="JVjpBj" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="currentColor">
-  <span>See the Pen <a href="https://codepen.io/max-grachev/pen/JVjpBj">
-  currentColor</a> by Max Grachev (<a href="https://codepen.io/max-grachev">@max-grachev</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+CSS
+
+```css
+.parent {
+  color: #49a16c;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+}
+
+.child {
+  background: currentColor;
+  height: 110px;
+}
+```
+
+{% demo "/color/", "Текущий цвет", 320 %}
 
 ## Подсказки
 

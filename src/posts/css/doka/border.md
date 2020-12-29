@@ -4,7 +4,7 @@ name: border
 author: ABatickaya
 co-authors:
 designers:
-contributors:
+contributors: skorobaeus
 summary:
   - border
 ---
@@ -37,15 +37,11 @@ CSS
 
 ```css
 .element {
-  border: 5px solid #bada55; /* рамка толщиной 5 пикселей, сплошная, цвет #BADA55 */
+  border: 5px solid #ed6742; /* рамка толщиной 5 пикселей, сплошная, цвет #ED6742 */
 }
 ```
 
-<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="solarrust" data-slug-hash="PLrweK" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="PLrweK">
-  <span>See the Pen <a href="https://codepen.io/solarrust/pen/PLrweK">
-  PLrweK</a> by Alena (<a href="https://codepen.io/solarrust">@solarrust</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
+{% demo "/border/basic", "Обычная рамка", 370 %}
 
 ## Как это понять
 
@@ -110,11 +106,7 @@ selector {
 
 Понять текстовое описание этих стилей довольно сложно, посмотри пример ниже:
 
-<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="result" data-user="solarrust" data-slug-hash="zbgzNw" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="zbgzNw">
-  <span>See the Pen <a href="https://codepen.io/solarrust/pen/zbgzNw">
-  zbgzNw</a> by Alena (<a href="https://codepen.io/solarrust">@solarrust</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
+{% demo "/border/all", "Все рамки", 540 %}
 
 ### `border-color`
 
@@ -164,11 +156,7 @@ CSS
 
 В итоге можно создать треугольники, смотрящие в любую сторону. Этот приём можно использовать чтобы не тянуть в проект мелкие иконки треугольников или стрелок.
 
-<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="css,result" data-user="solarrust" data-slug-hash="RdXLyj" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="RdXLyj">
-  <span>See the Pen <a href="https://codepen.io/solarrust/pen/RdXLyj">
-  RdXLyj</a> by Alena (<a href="https://codepen.io/solarrust">@solarrust</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
+{% demo "/border/triangles", "Треугольники", 390 %}
 
 🛠 Ещё немного про треугольники. А точнее стрелки. Их тоже можно создать при помощи `border`, но тут понадобиться подключить свойство `transform` ([transform](/css/doka/transform/)), чтобы повернуть элемент с рамками на 45 градусов в нужную сторону:
 
@@ -211,12 +199,7 @@ CSS
 }
 ```
 
-<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="css,result" data-user="solarrust" data-slug-hash="pYMWQM" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="pYMWQM">
-  <span>See the Pen <a href="https://codepen.io/solarrust/pen/pYMWQM">
-  pYMWQM</a> by Alena (<a href="https://codepen.io/solarrust">@solarrust</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+{% demo "/border/arrows", "Стрелки для слайдера", 360 %}
 
 Чем не стрелки для слайдера? 🤗
 

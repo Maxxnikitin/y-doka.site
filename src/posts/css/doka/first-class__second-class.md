@@ -4,7 +4,7 @@ name: first-class__second-class
 author: ABatickaya
 co-authors:
 designers:
-contributors:
+contributors: skorobaeus
 summary:
   - селектор
   - составной селектор
@@ -36,29 +36,27 @@ CSS
 /* Задаём общие стили для заголовков */
 .main-title,
 .title {
-  color: #333;
-  line-height: 1.4;
-  text-align: center;
+  position: relative;
+  color: #ffffff;
+  font-weight: 500;
 }
 
 /* Создаём одинаковые декоративные подчёркивания */
-.main-title:after,
-.title:after {
+.main-title:before,
+.title:before {
   content: "";
-  display: block;
-  width: 25px;
-  height: 3px;
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 7px;
   margin: auto;
-  background-color: red;
+  background-color: #1a5ad7;
+  z-index: -1;
 }
 ```
 
-<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="solarrust" data-slug-hash="mgMoor" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="mgMoor">
-  <span>See the Pen <a href="https://codepen.io/solarrust/pen/mgMoor">
-  mgMoor</a> by Alena (<a href="https://codepen.io/solarrust">@solarrust</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+{% demo "/first-class__second-class/", "Перечисление селекторов", 290 %}
 
 ## Как это понять
 

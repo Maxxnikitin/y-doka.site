@@ -28,7 +28,7 @@ node -v
 
 Node.js позволяет исполнить любой JavaScript-файл. Создадим демо-файл `script.js`:
 
-```jsx
+```js
 const whereIAm = __dirname
 // __dirname — глобальная перменная, хранящая папку, в которой лежит файл скрипта
 

@@ -33,7 +33,7 @@ summary:
 
 Синхронный код понятно читать, потому что он выполняется ровно так, как написан:
 
-```jsx
+```js
 console.log("A")
 console.log("B")
 console.log("C")
@@ -49,7 +49,7 @@ console.log("C")
 
 Однако с ним могут возникать некоторые проблемы. Представим, что нам нужно выполнить какую-то операцию, требующую некоторого времени — например, напечатать в консоли приветствие, но не сразу, а через 5 секунд.
 
-```jsx
+```js
 // Ниже псевдокод —
 // синхронная функция задержки delay() вымышленная:
 
@@ -79,7 +79,7 @@ greet()
 
 Теперь попробуем решить эту же задачу, но так, чтобы наш код не блокировал выполнение. Для этого мы воспользуемся функцией `setTimeout()`:
 
-```jsx
+```js
 setTimeout(function greet() {
   console.log("Hello!")
 }, 5000)
@@ -90,7 +90,7 @@ setTimeout(function greet() {
 
 Задача решена. В этот раз, однако, в эти «5 секунд молчания» мы можем выполнять другие действия.
 
-```jsx
+```js
 setTimeout(function greet() {
   console.log("Hello!")
 }, 5000)
@@ -118,7 +118,7 @@ _[Стек](https://ru.wikipedia.org/wiki/Стек)_ — это структур
 
 В стеке вызовов хранятся функции, до которых дошёл интерпретатор, и которые надо выполнить.
 
-```jsx
+```js
 function outer() {
   function inner() {
     console.log("Hello!") // (3)
@@ -161,7 +161,7 @@ outer() // (1)
 
 Теперь посмотрим, как ведёт себя стек вызовов при работе с асинхронным кодом:
 
-```jsx
+```js
 function main() {
   setTimeout(function greet() {
     console.log("Hello!")
@@ -218,7 +218,7 @@ main()
 
 Именно цикл событий ответственен за то, что `setTimeout()` пропал из стека, в прошлом примере. Чтобы увидеть картину целиком, давайте включим в нашу схему все недостающие части:
 
-```jsx
+```js
 // Возьмём тот же самый пример:
 
 function main() {
@@ -313,7 +313,7 @@ main()
 
 Допустим, у нас есть ряд асинхронных задач, которые зависят друг от друга: то есть первая задача запускает по завершении вторую, вторая — третью и т. д.
 
-```jsx
+```js
 setTimeout(() => {
   setTimeout(() => {
     setTimeout(() => {
@@ -330,7 +330,7 @@ setTimeout(() => {
 
 И такая башня может получиться в чём угодно. Если мы делаем несколько последовательных запросов к серверу, зависящих друг от друга, то это может выглядеть вот так:
 
-```jsx
+```js
 function request(url, onSuccess) {
   /*...*/
 }
@@ -358,7 +358,7 @@ _[Промис](posts/js/long/promise/)_ — это объект-обёртка 
 
 Промисы придумали, чтобы организовывать асинхронный код последовательно.
 
-```jsx
+```js
 // Та же последовательность запросов из прошлого примера,
 // но переписанная с использованием Промисов.
 
@@ -381,7 +381,7 @@ request("/api/users/1")
 
 Дополнительным плюсом стала возможность обрабатывать ошибки от цепочки промисов в одном месте — последним `catch`:
 
-```jsx
+```js
 request("/api/users/1")
   .then((user) => request(`/api/photos/${user.id}/`))
   .then((photo) => request(`/api/crop/${photo.id}/`))
@@ -412,7 +412,7 @@ request("/api/users/1")
 
 Асинхронная функция помечается специальным ключевым словом `async`:
 
-```jsx
+```js
 async function request() {}
 const req = async () => {}
 
@@ -423,7 +423,7 @@ class SomeClass {
 
 Они _всегда_ возвращают Промис. Даже если мы явно этого не указывали, как в примерах выше, при вызове они всё равно вернут Промис.
 
-```jsx
+```js
 async function request() {}
 
 // Сработает:
@@ -436,7 +436,7 @@ request().then(() => {})
 
 Внутри асинхронных функций, можно вызывать другие асинхронные функции, без каких-либо `then` или колбэков, с помощью ключевого слова `await`.
 
-```jsx
+```js
 async function loadPosts() {
   const response = await fetch(`/api/posts/`)
   const data = await response.json()
@@ -456,7 +456,7 @@ async function loadPosts() {
 
 **Мы можем обрабатывать ошибки с `try-catch`.** Как и с синхронным кодом обработка ошибок сводится к оборачиванию опасных операций в `try-catch`:
 
-```jsx
+```js
 async function loadPosts() {
   try {
     const response = await fetch(`/api/posts/`)
@@ -475,7 +475,7 @@ async function loadPosts() {
 
 **Нам не нужно промисифицировать промежуточные значения.** Если, например, мы хотели сделать цепочку из `then`, чтобы красиво обработать какие-то операции, но одна из операций Промис не возвращала...
 
-```jsx
+```js
 function request(url) {
   return new Promise(function(resolve, reject) {
     let responseFromServer;
@@ -503,7 +503,7 @@ request('/api/users/1')
 
 Нам бы приходилось делать нечто вроде:
 
-```jsx
+```js
 request('/api/users/1')
   .then(user => Promise.resolve(findId(user))
   // ...
@@ -547,7 +547,7 @@ request('/api/users/1')
 
 Для этого мы можем использовать [`Promise.all`](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Promise/all) и [`Promise.race`](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Promise/race).
 
-```jsx
+```js
 // Когда мы хотим дождаться выполнения всех запросов
 // и сделать что-то после этого:
 const request1 = fetch("/api/users")
@@ -593,7 +593,7 @@ Promise.race([promise1, promise2]).then((value) => {
 
 Однако, мы можем использовать [`for await ... of`](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for-await...of), который появился в ES2018, для итерирования над асинхронными итерируемыми сущностями.
 
-```jsx
+```js
 const urls = ["/api/users", "/api/posts", "/api/comments"]
 
 // Простой генератор создаёт итерируемую сущность,

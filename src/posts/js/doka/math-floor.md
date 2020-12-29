@@ -18,7 +18,7 @@ summary:
 
 ## Как пишется
 
-```jsx
+```js
 let num = 15.52
 // Обычное округление
 console.log(Math.round(num)) // 16

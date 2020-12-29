@@ -4,7 +4,7 @@ name: after
 author: ezhkov_d
 co-authors:
 designers:
-contributors:
+contributors: skorobaeus
 summary:
   - ::after
   - :after
@@ -43,11 +43,39 @@ a::after {
 
 Самый простой пример использования `::after` вместе с [::before](/css/doka/before/) — оформление текстового содержимого:
 
-<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="css,result" data-user="ezhkov" data-slug-hash="poyROao" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Псевдоэлементы ::before и ::after">
-  <span>See the Pen <a href="https://codepen.io/ezhkov/pen/poyROao">
-  Псевдоэлементы ::before и ::after</a> by Denis Ezhkov (<a href="https://codepen.io/ezhkov">@ezhkov</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
+HTML
+
+```html
+<article>
+  <h1>
+    «Все берут в горсть и нюхают: ааа… гру-шовка!»: вспоминаем, как писали об
+    <span class="accent">ароматах</span> классики
+  </h1>
+  <p>«Все кидаются в лопухи, в крапиву...»</p>
+  <p>«Лето Господне», Иван Шмелев</p>
+</article>
+```
+
+CSS
+
+```css
+.accent::before,
+.accent::after {
+  content: "🌸";
+  vertical-align: middle;
+  font-size: 0.6em;
+}
+
+.accent::before {
+  margin-right: 0.1em;
+}
+
+.accent::after {
+  margin-left: 0.1em;
+}
+```
+
+{% demo "/after/word", "Выделение слова в предложении", 540 %}
 
 ## Подсказки
 
@@ -57,13 +85,52 @@ a::after {
 
 🛠 Псевдоэлементы [::before](/css/doka/before/) и `::after` можно использовать и для более сложной стилизации:
 
-<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="css,result" data-user="ezhkov" data-slug-hash="poyROLo" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Псевдоэлементы ::before и ::after 2">
-  <span>See the Pen <a href="https://codepen.io/ezhkov/pen/poyROLo">
-  Псевдоэлементы ::before и ::after 2</a> by Denis Ezhkov (<a href="https://codepen.io/ezhkov">@ezhkov</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+HTML
 
-В этом примере верхняя и нижняя линии сделаны при помощи псевдоэлементов [::before](/css/doka/before/) и `::after`. При этом сами псевдоэлементы используются как два дополнительных стилизуемых элемента внутри ссылки `<a>`. Круто, правда? В HTML пишем один тег, а по факту можем стилизовать аж три! 🤘
+```html
+<a href="#" class="link">choose me</a>
+```
+
+CSS
+
+```css
+.link {
+  position: relative;
+}
+
+.link::before,
+.link::after {
+  content: "";
+  height: 8px;
+  width: 8px;
+  position: absolute;
+  transition: all 0.6s;
+}
+
+.link::before {
+  top: -3px;
+  left: -3px;
+  border-top: 6px solid #000000;
+  border-left: 6px solid #000000;
+}
+
+.link::after {
+  bottom: -3px;
+  right: -3px;
+  border-bottom: 6px solid #000000;
+  border-right: 6px solid #000000;
+}
+
+.link:hover::before,
+.link:hover::after {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s;
+}
+```
+
+{% demo "/after/link", "Стилизация", 155 %}
+
+В этом примере рамки применены к псевдоэлементам [::before](/posts/css/doka/before/) и `::after`. При этом сами псевдоэлементы используются как два дополнительных стилизуемых элемента внутри ссылки `<a>`. Круто, правда? В HTML пишем один тег, а по факту можем стилизовать аж три! 🤘
 
 {% include "authors/ezhkov_d/author.njk" %}

@@ -19,7 +19,7 @@ summary:
 
 ## Как пишется
 
-```jsx
+```js
 window.addEventListener("load", function () {
   console.log("load!")
 })

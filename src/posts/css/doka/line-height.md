@@ -4,7 +4,7 @@ name: line-height
 author: grachev
 co-authors:
 designers:
-contributors:
+contributors: skorobaeus
 summary:
   - line-height
 ---
@@ -86,52 +86,49 @@ div {
 
 Спойлер: простое число умножается на высоту шрифта того же элемента, а, например, значение `em` — на высоту шрифта родительского элемента:
 
+HTML
+
+```html
+<div class="box box_green">
+  <h1>Тут мы задали интервал с помощью числа 1.2</h1>
+  Оно умножается на размер шрифта этого же элемента. Это удобно и предсказуемо.
+</div>
+
+<div class="box box_blue">
+  <h1>А здесь мы ввели 1.2em</h1>
+  Это значит, что 1.2 умножается на размер шрифта родительского элемента, в
+  нашем случае
+  <div>, а не на размер заголовка. Это вносит путаницу.</div>
+</div>
+```
+
 CSS
 
 ```css
-.green {
-  line-height: 1.2;
-  border: solid limegreen;
-}
-
-.red {
-  line-height: 1.2em;
-  border: solid red;
-}
-
 h1 {
   font-size: 30px;
 }
 
 .box {
   width: 18em;
+  padding: 20px;
   display: inline-block;
   vertical-align: top;
   font-size: 15px;
 }
+
+.box_green {
+  line-height: 1.2;
+  background-color: #49a16c;
+}
+
+.box_blue {
+  line-height: 1.2em;
+  background-color: #1a5ad7;
+}
 ```
 
-HTML
-
-```html
-<div class="box green">
-  <h1>Тут мы задали интервал с помощью числа 1.2</h1>
-  Оно умножается на размер шрифта этого же элемента. Это удобно и предсказуемо.
-</div>
-
-<div class="box red">
-  <h1>А здесь мы ввели 1.2em</h1>
-  Это значит, что 1.2 умножается на размер шрифта родительского элемента, в
-  нашем случае div. А не на размер заголовка. Это вносит путаницу.
-</div>
-```
-
-<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="max-grachev" data-slug-hash="eoYyoM" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="line-height">
-  <span>See the Pen <a href="https://codepen.io/max-grachev/pen/eoYyoM">
-  line-height</a> by Max Grachev (<a href="https://codepen.io/max-grachev">@max-grachev</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+{% demo "/line-height/", "Высота строки", 390 %}
 
 ## В работе
 

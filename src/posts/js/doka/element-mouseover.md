@@ -18,7 +18,7 @@ summary:
 
 ## Как пишется
 
-```jsx
+```js
 let divEl = document.getElementsByTagName("div")[0]
 divEl.addEventListener("mouseover", function () {
   alert("курсор вошел в границы элемента!")

@@ -72,7 +72,7 @@ JSON используется для того чтобы получить дан
 
 Преобразуем JavaScript-объект в JSON:
 
-```jsx
+```js
 let hero = {
   nickname: "BestHealerEver",
   level: 7,
@@ -128,7 +128,7 @@ console.log(JSON.stringify(hero))
 
 С помощью `JSON.parse()` мы получим стандартный объект, с которым можно взаимодействовать:
 
-```jsx
+```js
 let json =
   '{"name":"Luke Skywalker","height":"172","mass":"77","hair_color":"blond","skin_color":"fair","eye_color":"blue","birth_year":"19BBY","gender":"male"}'
 let jedi = JSON.parse(json)

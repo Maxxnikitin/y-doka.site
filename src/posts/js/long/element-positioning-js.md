@@ -67,7 +67,7 @@ CSS ограничен в обратной связи на действия по
 
 Теперь в ответ на действие пользователя (например, в ответ на клик), поменяем класс элемента, отвечающий за положение:
 
-```jsx
+```js
 // Слушаем событие клика на элементе:
 element.addEventListener("click", () => {
   // При клике добавляем класс element-final:
@@ -117,7 +117,7 @@ element.addEventListener("click", () => {
 
 Теперь попробуем написать драг-н-дроп для мыши.
 
-```jsx
+```js
 // Сперва создадим ссылку на этот элемент,
 // чтобы слушать события на нём:
 const element = document.querySelector(".element")
@@ -188,7 +188,7 @@ document.body.addEventListener("mouseup", () => {
 
 Основа кода останется той же, стили и разметка не поменяются вовсе. В скриптах мы слегка изменим определение положения элемента.
 
-```jsx
+```js
 // ...
 
 element.addEventListener("mousedown", (e) => {
@@ -237,7 +237,7 @@ element.addEventListener("mousedown", (e) => {
 
 А также немного обновим изменение положения:
 
-```jsx
+```js
 // ...
 
 document.body.addEventListener("mousemove", (e) => {
@@ -295,7 +295,7 @@ document.body.addEventListener("mousemove", (e) => {
 
 Теперь подправим скрипт, чтобы сперва считать значение этих переменных:
 
-```jsx
+```js
 // ...
 
 element.addEventListener("mousedown", (e) => {
@@ -316,7 +316,7 @@ element.addEventListener("mousedown", (e) => {
 
 А теперь изменим обновление стилей:
 
-```jsx
+```js
 // ...
 
 document.body.addEventListener("mousemove", (e) => {

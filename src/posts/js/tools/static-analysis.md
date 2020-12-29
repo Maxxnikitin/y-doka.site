@@ -58,7 +58,7 @@ npx eslint --init
 
 Для наглядности положим в папку проекта JavaScript-файл с ошибками, которые ESLint способен отловить.
 
-```jsx
+```js
 // script.js
 
 let x = 12

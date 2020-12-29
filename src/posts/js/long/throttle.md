@@ -144,7 +144,7 @@ window.addEventListener("resize", recalculateProgress)
 
 Итак, `throttle` — это функция высшего порядка, которая будет принимать аргументом функцию, которую надо «попропускать».
 
-```jsx
+```js
 // Функция throttle будет принимать 2 аргумента:
 // - callee, функция, которую надо вызывать;
 // - timeout, интервал в мс, с которым следует пропускать вызовы.
@@ -176,7 +176,7 @@ function throttle(callee, timeout) {
 
 Теперь мы можем использовать его вот так:
 
-```jsx
+```js
 // Функция, которую мы хотим «пропускать»:
 function doSomething(arg) {
   // ...
@@ -202,7 +202,7 @@ throttledDoSomething(42)
 
 Теперь мы можем применить `throttle` для оптимизации обработчика:
 
-```jsx
+```js
 function throttle(callee, timeout) {
   /* ... */
 }

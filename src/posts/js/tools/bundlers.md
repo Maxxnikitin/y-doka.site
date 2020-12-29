@@ -51,7 +51,7 @@ npm install parcel-bundler
 
 Рядом с этим файлом следует разместить JavaScript-файл:
 
-```jsx
+```js
 // index.js
 
 document.getElementById("title").innerText = "Hello from JS!"
@@ -71,7 +71,7 @@ document.getElementById("title").innerText = "Hello from JS!"
 
 И запустить его:
 
-```jsx
+```js
 npm run dev
 ```
 

@@ -27,7 +27,7 @@ summary:
 
 ### keydown
 
-```jsx
+```js
 const spy = document.getElementById("keyboardSpy")
 
 spy.addEventListener("keydown", function (event) {
@@ -37,7 +37,7 @@ spy.addEventListener("keydown", function (event) {
 
 ### keyup
 
-```jsx
+```js
 const spy = document.getElementById("keyboardSpy")
 
 spy.addEventListener("keyup", function (event) {

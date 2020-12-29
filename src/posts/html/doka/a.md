@@ -8,6 +8,7 @@ designers:
 contributors:
   - ABatickaya
   - grachev
+  - skorobaeus
 summary:
   - ссылка
   - <a>

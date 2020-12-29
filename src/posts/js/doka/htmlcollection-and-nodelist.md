@@ -39,14 +39,14 @@ summary:
 
 🛠 Используй индексы для получения отдельных элементов коллекции:
 
-```jsx
+```js
 let paragraphs = document.getElementsByTagName("p")
 console.log(paragraphs[0])
 ```
 
 🛠 Если нужно обойти все элементы в цикле, то можно написать классический цикл `for`:
 
-```jsx
+```js
 let paragraphs = document.getElementsByTagName("p")
 for (let i = 0; i < paragraphs.length; ++i) {
   console.log(paragraphs[i].id) // печатаем значение атрибута id элемента
@@ -55,7 +55,7 @@ for (let i = 0; i < paragraphs.length; ++i) {
 
 Другой вариант — воспользоваться синтаксисом `for..of`:
 
-```jsx
+```js
 let paragraphs = document.getElementsByTagName("p")
 for (let item of paragraphs) {
   console.log(item.id)
@@ -66,7 +66,7 @@ for (let item of paragraphs) {
 
 🛠 Если очень нужны методы массива, то преобразуй `HTMLCollection` или `NodeList` в массив с помощью `Array.from`.
 
-```jsx
+```js
 let paragraphs = document.getElementsByTagName("p")
 let array = Array.from(paragraphs)
 

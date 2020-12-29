@@ -6,7 +6,7 @@ co-authors:
   - vladimir
   - ABatickaya
 designers:
-contributors:
+contributors: skorobaeus
 summary:
   - font-size
 ---
@@ -81,23 +81,42 @@ font-size: unset;
 HTML
 
 ```html
-<div style="font-size:1.5em">
-  Размер этого текста в 1.5 раза больше, чем стандартный размер вашего браузера
-  <div style="font-size:1.5em">
-    А этот текст в 1.5 раза больше, чем в родительском контейнере
-  </div>
+<div class="parent">
+  Размер этого текста в 1.5 раза больше, чем стандартный размер вашего браузера,
+  <span class="child">
+    а этот текст в 1.5 раза больше, чем в родительском контейнере.
+  </span>
 </div>
 ```
 
-<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="max-grachev" data-slug-hash="oVQGgr" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="em">
-  <span>See the Pen <a href="https://codepen.io/max-grachev/pen/oVQGgr">
-  em</a> by Max Grachev (<a href="https://codepen.io/max-grachev">@max-grachev</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
+CSS
+
+```css
+.parent {
+  font-size: 1.5em;
+}
+
+.child {
+  font-size: 1.5em;
+}
+```
+
+{% demo "/font-size/em", "Размер шрифта в em", 220 %}
 
 А вот как сочетается значение `em`, когда родительский элемент задан в процентах.
 
-Предположим, что стандартный размер текста в браузере — 16px, тогда слова «Закажите ... у нас» будут иметь размер 16px, а слово «пиццу» браузер отобразит в размере 25.6px. Всё потому что размер текста во внутреннем элементе `<span>` равен 1.6em, то есть 160% от родительского элемента, который в свою очередь равен 62.5% от своего родительского элемента — в данном случае настроек браузера.
+Очень часто можно встретить ситуацию, когда размер шрифта у `html` равен `62.5%`. Это _магическое число_ появилось не просто так. Всё дело в том, что стандартный размер шрифта в браузере — 16 пикселей. А 62.5% от него равно 10 пикселям. Что крайне удобно для расчётов.
+
+HTML
+
+```html
+<div>
+  <span>
+    Здесь основной текст такой же, как в стандартных настройках браузера,
+    <span>а эта фраза в 1.6 раз больше, чем основной текст</span>.
+  </span>
+</div>
+```
 
 CSS
 
@@ -107,34 +126,28 @@ html {
 }
 
 span {
-  font-size: 1.6em;
+  font-size: 1.6em; /* Размер шрифта элемента 10 * 1.6 = 16px */
 }
 ```
+
+{% demo "/font-size/em-2", "Размер шрифта в em", 180 %}
+
+Пример, где размер шрифта не зависит от родительского элемента, потому что мы задали его в `rem`.
 
 HTML
 
 ```html
-<div>
-  <span
-    >Здесь основной текст меньше, чем в стандартных настройках браузера,
-    <span>а эта фраза в 1.6 раз больше, чем основной текст</span>.</span
-  >
-</div>
+<span>
+  Теперь один контейнер находится <span>внутри другого</span>, но относительный
+  размер текста больше не зависит от родительского элемента.
+</span>
 ```
-
-<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="max-grachev" data-slug-hash="KErRvg" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="% и em">
-  <span>See the Pen <a href="https://codepen.io/max-grachev/pen/KErRvg">
-  % и em</a> by Max Grachev (<a href="https://codepen.io/max-grachev">@max-grachev</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-
-Пример, где размер шрифта не зависит от родительского элемента, потому что мы задали его в `rem`.
 
 CSS
 
 ```css
 html {
-  font-size: 100%; /* 1em = 10px, как в стандартных настройках браузера */
+  font-size: 100%; /* 1em = 16px, как в стандартных настройках браузера */
 }
 
 span {
@@ -142,21 +155,7 @@ span {
 }
 ```
 
-HTML
-
-```html
-<span
-  >Теперь один контейнер находится <span>внутри другого</span>, но размер
-  относительный размер текста больше не зависит от родительского элемента</span
->
-```
-
-<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="max-grachev" data-slug-hash="axbzbV" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="rem">
-  <span>See the Pen <a href="https://codepen.io/max-grachev/pen/axbzbV">
-  rem</a> by Max Grachev (<a href="https://codepen.io/max-grachev">@max-grachev</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+{% demo "/font-size/rem", "Размер шрифта в rem", 220 %}
 
 И ещё три примера, как можно задать размер шрифта:
 

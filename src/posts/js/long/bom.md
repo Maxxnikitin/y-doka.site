@@ -26,7 +26,7 @@ summary:
 
 В случае с браузерным окружением — это объектная модель браузера (_Browser Object Model, BOM_). Она предоставляет доступ к `navigator`, `location`, `fetch` и другим объектам.
 
-```jsx
+```js
 /*
                               BOM
                               |
@@ -83,7 +83,7 @@ navigator      screen      location       fetch        history     ...
 
 Если мы хотим изменить адрес и перейти на другую страницу, мы можем указать новый `location.href`:
 
-```jsx
+```js
 location.href = "yandex.ru"
 // И браузер перейдёт на страницу с адресом `yandex.ru`.
 ```
@@ -92,7 +92,7 @@ location.href = "yandex.ru"
 
 `fetch` предоставляет возможность работы с сетью, с его помощью можно отправлять запросы на сервер.
 
-```jsx
+```js
 fetch("http://example.com/movies.json")
   .then((response) => {
     return response.json()
@@ -110,14 +110,14 @@ fetch("http://example.com/movies.json")
 
 Чтобы перемещаться по истории назад и вперёд, можно использовать методы `back` и `forward`:
 
-```jsx
+```js
 history.back() // перешли на страницу назад
 history.forward() // ...на страницу вперёд.
 ```
 
 Для более точного управления историей рекомендуется использовать `pushState`:
 
-```jsx
+```js
 // state — любые данные, которые связаны с переходом;
 // бывает полезно, когда нужно разбить форму на несколько
 // шагов, но при этом помнить, какие данные были введены
@@ -144,7 +144,7 @@ history.pushState(state, title, url)
 
 Они удобны, когда мы не хотим отправлять данные на сервер, потому что они, например, промежуточные, или нужны только на клиенте.
 
-```jsx
+```js
 // Допустим, у нас есть форма из 5 шагов,
 // и мы хотим, чтобы все введённые данные
 // сохранились, и пользователь закрыв браузер
@@ -183,7 +183,7 @@ function nextStep() {
 
 Чтобы проверить, есть ли в `navigator` необходимая вам фича, используйте `in`:
 
-```jsx
+```js
 if (`bluetooth` in navigator) {
   // Есть доступ к Bluetooth API.
 }
@@ -199,7 +199,7 @@ if (`serviceWorker` in navigator) {
 
 Чтобы узнать, сколько пикселей занимает по ширине экран без полосы прокрутки (актуально для Windows, где полоса прокрутки отнимает какое-то пространство), используйте `availWidth`:
 
-```jsx
+```js
 // Без учёта полосы:
 const screenWidth = screen.width
 
@@ -211,7 +211,7 @@ const withoutScrollBar = screen.availWidth
 
 Чтобы программно перейти на другую страницу, используйте `location.href`:
 
-```jsx
+```js
 location.href = "/another-page"
 // Так браузер перейдёт на страницу
 // по адресу another-page на текущем сайте.
@@ -222,7 +222,7 @@ location.href = "https://google.com"
 
 Чтобы узнать полный путь от корня сайта, используйте `location.pathname`:
 
-```jsx
+```js
 // https://out-great-service.io/full/path/to/current/page
 
 const path = location.pathname
@@ -233,14 +233,14 @@ const path = location.pathname
 
 Чтобы изменить адрес без перезагрузки страницы, используйте `history.pushState`:
 
-```jsx
+```js
 const someData = {}
 history.pushState(someData, null, "/new/page/url")
 ```
 
 Для передачи данных, ассоциированных с переходом, используйте первый аргумент в `history.pushState`, а для указания нового заголовка страницы — второй:
 
-```jsx
+```js
 const transitionData = { userName: "Alex" }
 const newPageTitle = "Hello world!"
 history.pushState(transitionData, newPageTitle, "/new/page/url")
@@ -250,7 +250,7 @@ history.pushState(transitionData, newPageTitle, "/new/page/url")
 
 Используйте функции-обёртки, чтобы получать доступ ко хранилищу безопасно и не забывать превращать данные в JSON-строку при записи и в объект при чтении:
 
-```jsx
+```js
 function saveToStorage(key, data) {
   try {
     // Если браузер не поддерживает localStorage,

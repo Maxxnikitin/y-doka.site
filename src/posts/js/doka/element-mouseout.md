@@ -16,7 +16,7 @@ summary:
 
 ## Как пишется
 
-```jsx
+```js
 let divEl = document.getElementsByTagName("div")[0]
 divEl.addEventListener("mouseout", function () {
   alert("курсор вышел за границы элемента!")

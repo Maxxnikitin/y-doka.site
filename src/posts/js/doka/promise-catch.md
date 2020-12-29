@@ -24,7 +24,7 @@ _Возвращает_ промис.
 
 ## Как пишется
 
-```jsx
+```js
 // getPasswords() — асинхронная функция, которая возвращает промис
 getPasswords()
   .then(function (result) {
@@ -42,7 +42,7 @@ getPasswords()
 
 - вызывает функцию `reject` внутри промиса
 
-```jsx
+```js
 const rejectInSecond = new Promise(function (resolve, reject) {
   setTimeout(function () {
     reject(new Error("время истекло"))
@@ -56,7 +56,7 @@ rejectInSecond.catch(function (err) {
 
 - выбрасывает ошибку с помощью `throw`
 
-```jsx
+```js
 const throwInSecond = new Promise(function (resolve, reject) {
   setTimeout(function () {
     throw new Error("время истекло")

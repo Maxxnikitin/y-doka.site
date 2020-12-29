@@ -30,7 +30,7 @@ summary:
 
 По-умолчанию вызов `fetch` делает GET запрос по указанному адресу. Базовый вызов для получения данных можно записать таким образом:
 
-```jsx
+```js
 fetch("http://jsonplaceholder.typicode.com/posts")
 ```
 
@@ -39,7 +39,7 @@ fetch("http://jsonplaceholder.typicode.com/posts")
 - `ok` — принимает состояние `true` или `false` и сообщает об успешности запроса
 - `json` — метод, вызов которого, возвращает результат запроса в виде json
 
-```jsx
+```js
 fetch("http://jsonplaceholder.typicode.com/posts")
   .then((response) => response.json())
   .then((data) => data) // Получим ответ [{...}, {...}, {...}, ...]
@@ -47,7 +47,7 @@ fetch("http://jsonplaceholder.typicode.com/posts")
 
 С помощью второго аргумента `options` можно передать настройки запроса. Например, можно изменить метод и добавить тело запроса, если мы хотим не получать, а отправлять данные. Так же в запрос можно добавить заголовки в виде объекта или специального класса `Headers` .
 
-```jsx
+```js
 const newPost = {
   title: "foo",
   body: "bar",
@@ -72,7 +72,7 @@ fetch("https://jsonplaceholder.typicode.com/posts", {
 
 По-умолчанию `fetch` запросы не включают в себя cookies и потому авторизованные запросы на сервере могут не пройти. Для этого необходимо добавить в настройку поле `credentials`:
 
-```jsx
+```js
 fetch("https://somesite.com/admin", {
   method: "GET",
   // или 'same-origin' если можно делать такие запросы только в пределах этого домена
@@ -84,7 +84,7 @@ fetch("https://somesite.com/admin", {
 
 Если ответом на запрос `fetch` была ошибка (например HTTP код 400, 404 или 500), то `Promise` не попадет в состояние _rejected_. Promise выполнится с ошибкой только если запрос не случился из-за сбоя сети или что-то помешало выполнению `fetch`.
 
-```jsx
+```js
 // Запрос вернет ошибку 404 Not Found
 fetch("https://jsonplaceholder.typicode.com/there-is-no-such-route").catch(
   () => {
@@ -95,7 +95,7 @@ fetch("https://jsonplaceholder.typicode.com/there-is-no-such-route").catch(
 
 Чтобы обработать ошибку запроса необходимо обращать внимание на поле `ok` в объекте ответа `Response` . В случае ошибки запроса оно будет равно `false`
 
-```jsx
+```js
 fetch("https://jsonplaceholder.typicode.com/there-is-no-such-route")
   .then((response) => {
     // Проверяем успешность запроса и выкидываем ошибку
@@ -117,7 +117,7 @@ fetch("https://jsonplaceholder.typicode.com/there-is-no-such-route")
 
 Иногда может возникнуть необходимость прервать запрос, например когда авторизация пользователя просрочена или пользователь самостоятельно хочет отменить запрос (отменил скачивание файла)
 
-```jsx
+```js
 const controller = new AbortController()
 
 function fetchData() {
@@ -152,7 +152,7 @@ controller.abort()
 </form>
 ```
 
-```jsx
+```js
 // Находим элемент с файлом
 const fileInput = document.getElementById("avatar")
 const form = document.getElementById("form")
@@ -184,7 +184,7 @@ form.addEventListener("submit", handleSubmit)
 
 Попробуем таким образом загрузить милое видео как белый котик дружит с огромным псом.
 
-```jsx
+```js
 fetch("https://i.imgur.com/C5QXZ7u.mp4").then(async (response) => {
   let received = 0
 

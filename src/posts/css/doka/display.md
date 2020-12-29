@@ -4,7 +4,7 @@ name: display
 author: ABatickaya
 co-authors:
 designers:
-contributors:
+contributors: skorobaeus
 summary:
   - блочная модель
   - block
@@ -121,12 +121,40 @@ summary:
 
 🛠 Если нужно плавно показывать элемент или наоборот, прятать его, то стоит присмотреться к решениям с использованием `visibility` и `opacity` . Или менять стили элемента при помощи JavaScript. Например, можно показывать другой текст по наведению курсора на элемент:
 
-<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="result" data-user="solarrust" data-slug-hash="NmBabG" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="NmBabG">
-  <span>See the Pen <a href="https://codepen.io/solarrust/pen/NmBabG">
-  NmBabG</a> by Alena (<a href="https://codepen.io/solarrust">@solarrust</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+HTML
+
+```html
+<div class="parent">
+  <p class="some-text">
+    Я — текст простой. Наведи на меня курсор и я покажу подсказку!
+    <span class="note">Теперь ты читаешь скрытую подсказку! 🎉</span>
+  </p>
+</div>
+```
+
+CSS
+
+```css
+.some-text {
+  position: relative;
+}
+
+.note {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.35s;
+}
+
+.some-text:hover .note {
+  opacity: 1;
+}
+```
+
+{% demo "/display/", "Плавное появление / исчезновение", 150 %}
 
 🛠 Очень много задач на сегодняшний день решает `display: flex`. С его появлением перестали так часто использоваться значение `inline-block` или свойство `float`. Например, частая задача вертикального выравнивания раньше решалась при помощи магических пассов — большого количества кода — а теперь легко решается одним свойством `align-items`. Или прижать два блока к разным сторонам родителя раньше можно было при помощи `float` и заклинания для решения _проблемы выпадания_. Теперь достаточно написать `justify-content: space-between` и два блока будут прижаты к краям родителя. 🤗
 

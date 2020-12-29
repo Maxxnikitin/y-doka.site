@@ -6,7 +6,7 @@
   padding-bottom: 2rem;
   hyphens: auto;
 
-  @media screen and (max-width: 769px) {
+  @media (max-width: 769px) {
     margin-left: auto;
     margin-right: auto;
   }
@@ -27,7 +27,7 @@
     font-size: 3.75rem;
     line-height: 1.2;
 
-    @media screen and (max-width: 425px){
+    @media (max-width: 425px){
       font-size: 2.75rem;
     }
 

@@ -120,7 +120,7 @@ pre code {
     justify-content: flex-start;
   }
 
-  @media screen and (max-width: 425px) {
+  @media (max-width: 425px) {
     &__line {
       display: flex;
       flex-direction: column;

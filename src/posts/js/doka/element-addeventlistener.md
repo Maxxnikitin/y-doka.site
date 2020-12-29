@@ -14,7 +14,7 @@ summary:
 
 ## Пример
 
-```jsx
+```js
 let clickHandler = function (event) {
   console.log("произошло событие", event.type)
 }
@@ -30,7 +30,7 @@ elem.addEventListener("click", clickHandler)
 
 Функция может быть объявлена ранее, а может быть и анонимной:
 
-```jsx
+```js
 function handleClickFunction(e) {
   alert("Именованая функция")
 }

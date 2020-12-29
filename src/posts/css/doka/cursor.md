@@ -4,7 +4,7 @@ name: cursor
 author: ABatickaya
 co-authors:
 designers:
-contributors:
+contributors: skorobaeus
 summary:
   - cursor
 ---
@@ -34,7 +34,7 @@ summary:
 
 ```css
 article {
-  cursor: url(http://profilki.pl/files/cur/1116.png) 2 2, default;
+  cursor: url(cat.png) 2 2, default;
 }
 ```
 
@@ -42,11 +42,7 @@ article {
 
 Если навести курсор на блок статьи, то увидите картинку котика вместо привычной стрелочки.
 
-<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="result" data-user="solarrust" data-slug-hash="abZMMRw" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="abZMMRw">
-  <span>See the Pen <a href="https://codepen.io/solarrust/pen/abZMMRw">
-  abZMMRw</a> by Alena (<a href="https://codepen.io/solarrust">@solarrust</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
+{% demo "/cursor/cat", "Картинка в качестве курсора", 260 %}
 
 ## Как пишется
 
@@ -80,12 +76,7 @@ article {
 
 Демо со всеми перечисленными курсорами:
 
-<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="css,result" data-user="solarrust" data-slug-hash="XWKGQPY" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="XWKGQPY">
-  <span>See the Pen <a href="https://codepen.io/solarrust/pen/XWKGQPY">
-  XWKGQPY</a> by Alena (<a href="https://codepen.io/solarrust">@solarrust</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+{% demo "/cursor/all", "Все виды курсоров", 580 %}
 
 Внешне курсоры могут отличаться в разных операционных системах.
 
