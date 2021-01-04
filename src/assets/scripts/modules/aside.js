@@ -13,11 +13,12 @@ function toggleAside() {
 function asideOpener() {
   let postPath = window.location.pathname.split("/").filter((el) => el)
   let [postSection, postType, postName] = postPath
+  const pageLink = `/${postSection}/${postType}/${postName}`
 
   // TODO: оптимизировать
   aside.querySelector(`.aside__${postSection}`).open = "true"
   aside.querySelector(`.aside__${postSection}-${postType}`).open = "true"
-  aside.querySelector(`[href*="${postName}"]`).classList.add("_active")
+  aside.querySelector(`[href="${pageLink}"]`).classList.add("_active")
   aside
     .querySelector(`[href*="${postName}"]._active`)
     .parentElement.scrollIntoView()
